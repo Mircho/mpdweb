@@ -12,3 +12,17 @@ I was contemplating building a luci extension so the ui is embedded into the reg
 So then the decision was to build some local app that serves we content and act as a control proxy for passing commands to mpd.
 
 Thus this all started
+
+# Server side
+
+The server side steps on mongoose web server <https://github.com/cesanta/mongoose>, or at least the version that was relevant back in 2014-2015. I can not express my gratitude to cesanta for making this library and then later I found Mongoose OS - a stack for running on wifi connected devices, that I also employ into my automation project. Check them!
+
+For configuration, as the intention was to run on OpenWRT I used libuci <https://oldwiki.archive.openwrt.org/doc/techref/uci>
+
+For json parsing and building jansson library was used <https://digip.org/jansson/>
+
+For controlling mpd I used libmpdclient <https://github.com/MusicPlayerDaemon/libmpdclient>:
+
+# Client side
+
+For the client I wrote a single page app with Knockout JS <https://knockoutjs.com/> and bootstrap for the page structure
