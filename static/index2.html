@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MPD WEB RADIO</title>
+
+    <!-- Bootstrap -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en' rel='stylesheet' type='text/css'>
+    <link href="resources2/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources2/css/mpd.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" class="mpdSidebar mpdSidebar_main">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand mpdSidebar-title">
+                    <a href="#">
+                        mpdMUZAK
+                    </a>
+                </li>
+            </ul>
+            <ul class="sidebar-nav">
+                <li class="mpdSidebar-listitem">
+                    <span class="glyphicon glyphicon-music mpdSidebar-icon"></span>
+                    Playlist
+                </li>
+                <li class="mpdSidebar-listitem">
+                    <span class="glyphicon glyphicon-search mpdSidebar-icon"></span>
+                    Search
+                </li>
+                <li class="mpdSidebar-listitem">
+                    <span class="glyphicon glyphicon-th-list mpdSidebar-icon"></span>
+                    Browse
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button id="menu-toggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">Playlist</a>
+                </div>
+                </div>
+            </nav>
+            <div class="container-fluid">
+                <div class="row">
+                    <list params="list: currentPlayList"></list>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- TEMPLATES -->
+
+    <!-- TEMPLATE FOR SONG REMOVE DIALOG -->
+    <script type="text/html" id="mpdradioModalTemplateRemoveSong">
+    <div class="modal fade" id="mpdradioRemoveModal" tabindex="-1" role="dialog" aria-labelledby="mpdradioLabelRemoveModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Remove song(s)</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-condensed" data-bind="foreach: data.songs">
+                            <tr>
+                                <td data-bind="text:$index"></td>
+                                <td data-bind="text:$data.displayName()"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-bind="click: action">Remove</button>
+                    <button type="button" class="btn" data-dismiss="modal" data-bind="click: cancel">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </script>
+    <!-- TEMPLATE FOR SONG REMOVE DIALOG -->
+
+    <!-- /TEMPLATES -->
+
+    <script data-main="resources2/js/main" src="resources2/js/require.js"></script>
+</body>
+</html>

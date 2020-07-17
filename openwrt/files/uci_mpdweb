@@ -1,0 +1,4 @@
+config radioserver
+	option ServerPort	"1777"
+	option MPDServer	"pulsebox"
+	option MPDPort		"6600"

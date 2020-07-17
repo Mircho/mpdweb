@@ -1,0 +1,10 @@
+Package: mpdweb
+Version: 0.1-1
+Depends: libc, libpthread, libuci, jansson, libmpdclient
+Source: package/utils/mpdweb
+Section: base
+Architecture: ar71xx
+Installed-Size: 36186
+Description:  Ethernet bridging configuration utility
+ Manage ethernet bridging; a way to connect networks together to
+ form a larger network.

@@ -1,0 +1,33 @@
+<div class="SongList container-fluid" data-bind="css: { SongList_editable: selectMode }">
+
+    <div class="SongList-toolbar row">
+
+        <div class="pull-right btn-group-sm" role="group" aria-label="song list toolbar">
+          <button type="button" class="EditBtn btn btn-default" data-bind="click: function() { selectMode( true ) }">
+              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit
+          </button>
+          <button type="button" class="CancelBtn btn btn-default" data-bind="click: function() { selectMode( false ) }">
+              Cancel
+          </button>
+        </div>
+
+        <div class="ChangeGrp btn-group-sm pull-right" role="group" aria-label="song list toolbar">
+          <button type="button" class="DeleteBtn btn btn-default" data-bind="click:onDelete, enable:selectedSongs().length > 0">
+              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Delete
+          </button>
+        </div>
+
+    </div>
+
+    <div class="SongList-content row">
+
+        <ul class="SongList-list list-group" data-bind="foreach: { data: songs, as: 'song' }">
+            <li class="list-group-item Song" data-bind="click: function() { $parent.onSelect( $data ) }, css: { 'Song_radio': song.isRadio(), 'Song_selected': song.isSelected() }">
+                <span class="Song-Selector glyphicon" data-bind="css: { 'glyphicon-check': song.isSelected(), 'glyphicon-unchecked': !song.isSelected() }"></span>
+                <span class="Song-Name" data-bind="text: song.displayName">Song name</h1>
+            </li>
+        </ul>
+
+    </div>
+
+</div>

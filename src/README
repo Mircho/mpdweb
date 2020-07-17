@@ -1,0 +1,8 @@
+mpc reference implementation:
+https://github.com/jduepmeier/mpdinfo/blob/master/mpdinfo.c
+
+libmpd documentation:
+http://api.sarine.nl/libmpd/
+
+execute a method every n sec:
+http://stackoverflow.com/questions/13923885/execute-a-method-every-x-seconds-in-c
