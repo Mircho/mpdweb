@@ -26,3 +26,5 @@ For controlling mpd I used libmpdclient <https://github.com/MusicPlayerDaemon/li
 # Client side
 
 For the client I wrote a single page app with Knockout JS <https://knockoutjs.com/> and bootstrap for the page structure
+
+The client is communicating over HTTP with the server and mpd status updates are pushed to the client over a websocket
